@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>GTA 6 - Jogadores</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/">Início</a>
+            <a href="/formulario">Formulário GTA 6</a>
+            <a href="/dados">Lista de Jogadores</a>
+        </nav>
+
+        <h1>Quem vai jogar GTA 6?</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Nick no Jogo</th>
+                    <th>Vai Jogar?</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for jogador in jogadores %}
+                <tr>
+                    <td>{{ jogador[0] }}</td>
+                    <td>{{ jogador[1] }}</td>
+                    <td>{{ jogador[2] }}</td>
+                    <td>{{ jogador[3] }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="4">Ninguém cadastrado ainda.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
