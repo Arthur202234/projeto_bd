@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 DB_CONFIG = {
     "host": "localhost",
+    "port": 3309,
     "user": "root",
     "password": "",
     "database": "gta6_db",
