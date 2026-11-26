@@ -2,43 +2,58 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>GTA 6 - Jogadores</title>
+    <title>GTA 6 - Lista de Jogadores</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <a href="/">Início</a>
-            <a href="/formulario">Formulário GTA 6</a>
-            <a href="/dados">Lista de Jogadores</a>
-        </nav>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="brand" href="/">GTA VI <span>HUB</span></a>
+            <nav>
+                <a href="/">Início</a>
+                <a href="/formulario">Formulário</a>
+                <a href="/dados">Jogadores</a>
+            </nav>
+        </div>
+    </header>
 
-        <h1>Quem vai jogar GTA 6?</h1>
+    <main class="container">
+        <section class="hero">
+            <span class="tag">Banco de Dados • MySQL</span>
+            <h1>Jogadores Cadastrados</h1>
+            <p>Registros salvos diretamente na tabela <strong>jogadores</strong> do banco <strong>gta6_db</strong>.</p>
+            <div class="acoes">
+                <a class="btn" href="/formulario">+ Novo Cadastro</a>
+                <a class="btn btn-secundario" href="/">Voltar ao Início</a>
+            </div>
+        </section>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Nick no Jogo</th>
-                    <th>Vai Jogar?</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for jogador in jogadores %}
-                <tr>
-                    <td>{{ jogador[0] }}</td>
-                    <td>{{ jogador[1] }}</td>
-                    <td>{{ jogador[2] }}</td>
-                    <td>{{ jogador[3] }}</td>
-                </tr>
-                {% else %}
-                <tr>
-                    <td colspan="4">Ninguém cadastrado ainda.</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+        <section class="tabela-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Nick no Jogo</th>
+                        <th>Vai Jogar?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for jogador in jogadores %}
+                    <tr>
+                        <td>#{{ jogador[0] }}</td>
+                        <td>{{ jogador[1] }}</td>
+                        <td>{{ jogador[2] }}</td>
+                        <td>{{ jogador[3] }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="4">Nenhum jogador cadastrado ainda. Clique em "+ Novo Cadastro" para adicionar o primeiro.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
 </body>
 </html>

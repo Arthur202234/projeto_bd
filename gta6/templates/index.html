@@ -2,20 +2,46 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>GTA 6 - Início</title>
+    <title>GTA 6 - Vitrine do Projeto</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <a href="/">Início</a>
-            <a href="/formulario">Formulário GTA 6</a>
-            <a href="/dados">Lista de Jogadores</a>
-        </nav>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="brand" href="/">GTA VI <span>HUB</span></a>
+            <nav>
+                <a href="/">Início</a>
+                <a href="/formulario">Formulário</a>
+                <a href="/dados">Jogadores</a>
+            </nav>
+        </div>
+    </header>
 
-        <h1>GTA 6 - Cadastro</h1>
-        <p>Projeto escolar com tema de GTA 6 usando HTML, CSS, Python (Flask) e MySQL.</p>
-        <p>Vá em <strong>Formulário GTA 6</strong> para registrar seu nome, seu nick no jogo e dizer se vai jogar, ou em <strong>Lista de Jogadores</strong> para ver quem já respondeu.</p>
-    </div>
+    <main class="container">
+        <section class="hero">
+            <span class="tag">Projeto Escolar • Flask + MySQL</span>
+            <h1>Grand Theft Auto VI — Cadastro da Comunidade</h1>
+            <p>Visual inspirado em páginas de destaque de jogos, conectando um formulário HTML/CSS ao Python e ao MySQL de forma simples.</p>
+            <div class="acoes">
+                <a class="btn" href="/formulario">Preencher Formulário</a>
+                <a class="btn btn-secundario" href="/dados">Ver Lista Salva</a>
+            </div>
+        </section>
+
+        <section class="grid-cards">
+            <article class="card">
+                <h2>1. Formulário</h2>
+                <p>Informe seu nome, seu nick no jogo e se pretende jogar GTA 6.</p>
+            </article>
+            <article class="card">
+                <h2>2. Banco MySQL</h2>
+                <p>Os dados são enviados via POST para o Flask e salvos na tabela de jogadores.</p>
+            </article>
+            <article class="card">
+                <h2>3. Tabela</h2>
+                <p>Confira todos os registros cadastrados diretamente do banco de dados.</p>
+            </article>
+        </section>
+    </main>
 </body>
 </html>

@@ -2,35 +2,47 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>GTA 6 - Formulário</title>
+    <title>GTA 6 - Formulário de Jogador</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <a href="/">Início</a>
-            <a href="/formulario">Formulário GTA 6</a>
-            <a href="/dados">Lista de Jogadores</a>
-        </nav>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="brand" href="/">GTA VI <span>HUB</span></a>
+            <nav>
+                <a href="/">Início</a>
+                <a href="/formulario">Formulário</a>
+                <a href="/dados">Jogadores</a>
+            </nav>
+        </div>
+    </header>
 
-        <h1>Formulário - GTA 6</h1>
-        <form action="/formulario" method="POST">
-            <label for="nome">Seu nome:</label>
-            <input type="text" id="nome" name="nome" required>
+    <main class="container">
+        <section class="hero">
+            <span class="tag">Cadastro • Vice City</span>
+            <h1>Registrar Jogador</h1>
+            <p>Preencha seus dados abaixo para entrar na lista oficial da galera que está aguardando Grand Theft Auto VI.</p>
+        </section>
 
-            <label for="nick_jogo">Seu nick no jogo:</label>
-            <input type="text" id="nick_jogo" name="nick_jogo" required>
+        <section class="form-box">
+            <form action="/formulario" method="POST">
+                <label for="nome">Seu nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Ex: Resenha" required>
 
-            <label for="vai_jogar">Você vai jogar GTA 6?</label>
-            <select id="vai_jogar" name="vai_jogar" required>
-                <option value="">Selecione...</option>
-                <option value="Sim">Sim</option>
-                <option value="Não">Não</option>
-                <option value="Talvez">Talvez</option>
-            </select>
+                <label for="nick_jogo">Seu nick no jogo</label>
+                <input type="text" id="nick_jogo" name="nick_jogo" placeholder="" required>
 
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
+                <label for="vai_jogar">Você vai jogar GTA 6?</label>
+                <select id="vai_jogar" name="vai_jogar" required>
+                    <option value="">Selecione uma opção...</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Talvez">Talvez</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <button type="submit">Salvar Cadastro</button>
+            </form>
+        </section>
+    </main>
 </body>
-</html> 
+</html>
